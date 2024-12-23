@@ -1,0 +1,175 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden; 
+}
+
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(10, 10, 10, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    overflow-y: auto; 
+    height: 80vh; 
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+#parcelamento {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 1em;
+}
+
+input.invalid {
+    border-color: #df3623;
+}
+
+input.valid {
+    border-color: #6782fa;
+}
+
+#message {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.confirm-payment {
+    margin-top: 20px;
+}
+
+#parcelamento-btn {
+    background-color: #161718;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#parcelamento-btn:hover {
+    background-color: #101011;
+}
+
+button {
+    background-color: #101011;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #161718;
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        margin-top: 30px;
+        padding: 20px;
+        height: auto; 
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    #parcelamento {
+        padding: 10px;
+    }
+
+    button {
+        padding: 12px;
+    }
+
+    #parcelamento-btn {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1em;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    #parcelamento {
+        padding: 8px;
+    }
+
+    button {
+        padding: 10px;
+    }
+
+    #parcelamento-btn {
+        padding: 10px;
+    }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Pagamento</title>
+    <link rel="stylesheet" href="formulario.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário de Pagamento</h1>
+        
+        <form id="formulario">
+            <fieldset>
+                <legend>Informações Pessoais</legend>
+                <label for="name">Nome Completo:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="address">Endereço:</label>
+                <input type="text" id="address" name="address" required>
+                
+                <label for="neighborhood">Bairro:</label>
+                <input type="text" id="neighborhood" name="neighborhood" required>
+                
+                <label for="city">Cidade:</label>
+                <input type="text" id="city" name="city" required>
+                
+                <label for="state">Estado:</label>
+                <input type="text" id="state" name="state" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Informações de Pagamento</legend>
+                <label for="card-number">Número do Cartão:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+                
+                <label for="expiry-date">Data de Expiração:</label>
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/AA" required>
+                
+                <label for="cvv">Código de Segurança (CVV):</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123" required>
+            </fieldset>
+
+            <button type="button" id="parcelamento-btn">Ver Parcelamento</button>
+            <div id="parcelamento-options" style="display: none;">
+                <label for="parcelamento">Escolha o número de parcelas:</label>
+                <select id="parcelamento" name="parcelamento"></select>
+            </div>
+
+            <button type="button" id="confirmar-btn" style="display: none;">Confirmar Pagamento</button>
+        </form>
+
+        <div id="message"></div>
+    </div>
+
+    <script>
+        // Lógica do parcelamento
+        document.getElementById('parcelamento-btn').addEventListener('click', function() {
+            const valorTotal = 1000; 
+            const parcelasMaximas = 12; 
+
+            let select = document.getElementById('parcelamento');
+            select.innerHTML = ''; 
+
+            for (let i = 1; i <= parcelasMaximas; i++) {
+                let valorParcela = valorTotal / i;
+                let option = document.createElement('option');
+                option.value = i;
+                option.textContent = `${i}x de R$ ${valorParcela.toFixed(2)} sem juros`;
+                select.appendChild(option);
+            }
+
+            document.getElementById('parcelamento-options').style.display = 'block';
+            document.getElementById('confirmar-btn').style.display = 'inline-block';
+        });
+
+        // Lógica de confirmação de pagamento
+        document.getElementById('confirmar-btn').addEventListener('click', function() {
+            const selectedParcelas = document.getElementById('parcelamento').value;
+            if (!selectedParcelas) {
+                alert('Por favor, selecione o número de parcelas.');
+                return;
+            }
+
+            // Coletando os dados do formulário
+            const nome = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('phone').value;
+            const endereco = document.getElementById('address').value;
+            const bairro = document.getElementById('neighborhood').value;
+            const cidade = document.getElementById('city').value;
+            const estado = document.getElementById('state').value;
+            const numeroCartao = document.getElementById('card-number').value;
+            const dataExpiracao = document.getElementById('expiry-date').value;
+            const cvv = document.getElementById('cvv').value;
+
+            // Verificando se todos os campos foram preenchidos
+            if (!nome || !email || !telefone || !endereco || !bairro || !cidade || !estado || !numeroCartao || !dataExpiracao || !cvv) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+
+            // Exibindo mensagem de confirmação
+            const message = `
+                Olá ${nome},<br>
+                Seu pagamento foi processado com sucesso!<br>
+                Agradecemos pela sua compra!<br>
+                Parcelamento: ${selectedParcelas}x de R$ ${(1000 / selectedParcelas).toFixed(2)} sem juros.`;
+            document.getElementById('message').innerHTML = message;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cristian Dior</title>
+  <link rel="icon" href="https://i.pinimg.com/564x/de/dd/64/dedd642a69af0ab853b83ac2122f3a54.jpg" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<script>
+  
+  document.addEventListener('DOMContentLoaded', function () {
+      const buttons = document.querySelectorAll('.product button'); 
+
+      buttons.forEach(button => {
+          button.addEventListener('click', function () {
+              const productName = this.parentElement.querySelector('h3').textContent; 
+              localStorage.setItem('produtoSelecionado', productName); 
+              console.log("Produto selecionado:", productName); 
+              window.location.href = 'formulario.html'; 
+          });
+      });
+  });
+</script>
+
+<body>
+  <div class="top-bar">
+    <p>Aproveite frete grátis em todas as compras no site - <span>tempo limitado</span></p>
+  </div>
+
+  <!-- Navbar principal -->
+  <header class="navbar">
+    <div class="navbar-left"></div>
+    <div class="navbar-center">
+      <h1>DIOR</h1>
+      <link rel="icon" href="https://hflamppost.com/wp-content/uploads/2024/02/Screen-Shot-2024-02-21-at-9.10.32-AM.png" type="image/png">
+    </div>
+    <div class="navbar-right">
+      <a href="login.html" class="login">Login</a>
+      <a href="#" class="cart">Carrinho</a>
+    </div>
+  </header>
+
+  
+
+  <section class="product">
+    <div class="product-list">
+      <div class="product">
+        <img src="images/perfume.webp" alt="Miss Dior Parfum">
+        <h3>Miss Dior Parfum</h3>
+        <p>Edição limitada</p>
+        <p class="price">R$ 500,00</p>
+        <a href="formulario.html">
+          <button>Comprar</button>
+        </a>
+      </div>
+  
+      <div class="product">
+        <img src="images/base.jpg" alt="Dior Forever 24hr Matte">
+        <h3>Dior Forever 24hr Matte</h3>
+        <p>Edição limitada</p>
+        <p class="price">R$ 1.360,00</p>
+        <a href="formulario.html">
+          <button>Comprar</button>
+        </a>
+      </div>
+  
+      <div class="product">
+        <img src="images/serum.webp" alt="Dior Prestige Anti-aging">
+        <h3>Dior Prestige Anti-aging</h3>
+        <p>Edição limitada</p>
+        <p class="price">R$ 201,73</p>
+        <a href="formulario.html">
+          <button>Comprar</button>
+        </a>
+      </div>
+  
+      <div class="product">
+        <img src="images/bolsa.webp" alt="Bolsa Cristian Dior Lady Mini Italiana">
+        <h3>Bolsa Cristian Dior Lady Mini Italiana</h3>
+        <p>Edição limitada</p>
+        <p class="price">R$ 2.900,00</p>
+        <a href="formulario.html">
+          <button>Comprar</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+ 
+  <footer>
+    <div class="footer-info">
+      <p>Inspire-me com todas as últimas novidades da Dior</p>
+      <form id="messageForm">
+        <input type="text" id="userMessage" placeholder="Seu Email" required>
+        <button type="submit">Confirmar</button>
+      </form>
+      
+      
+      <p id="confirmationMessage" style="display: none; color: #28a745;">Mensagem enviada com sucesso!</p>
+    </div>
+    <div class="footer-links">
+      <p>&copy; Loja Inspirada na Dior. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    
+    const form = document.getElementById('messageForm');
+    const confirmationMessage = document.getElementById('confirmationMessage');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault(); 
+
+      
+      confirmationMessage.style.display = 'block';
+
+      
+      document.getElementById('userMessage').value = '';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.card-header {
+  padding-bottom: 30px;
+  opacity: 0.9;
+  color: #fff;
+  text-align: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+}
+
+.logo {
+  width: 40px; 
+  height: auto;
+  margin-right: 10px; 
+}
+
+.card-header h2 {
+  font-size: 24px; 
+  margin: 0;
+}
+
+
+
+.top-bar {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.top-bar span {
+  color: #e0bfb8;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 300px;
+}
+
+.navbar h1 {
+  font-family: 'Times New Roman', serif;
+  font-size: 2rem;
+  color: #000;
+  text-align: center;
+  
+}
+
+.search-bar {
+  width: 200px;
+  padding: 5px 10px;
+  border-radius: 80px;
+  border: 1px solid #ddd;
+  
+  
+}
+
+.navbar-right a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.navbar-right a:hover {
+  color: #e0bfb8;
+}
+
+.banner {
+  background-color: #e0bfb8;
+  color: #fff;
+  text-align: center;
+  padding: 50px 20px;
+  border-radius: 20px;
+}
+
+
+
+.banner p {
+  font-size: 1.2rem;
+}
+
+
+.products {
+  padding: 20px;
+}
+
+.products h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  background: #fff;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+}
+
+.product img {
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+.product h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.product .price {
+  color: #e0bfb8;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.product button {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  
+
+}
+
+.product button:hover {
+  background-color: #333;
+}
+
+footer {
+  background-color: #f8f5f0;
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+}
+
+footer form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+footer .input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+footer input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  width: 250px;
+  margin-right: 10px; 
+  max-width: 100%;
+}
+
+footer button {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 250px; 
+  max-width: 100%; 
+  margin-top: 10px; 
+}
+
+footer button:hover {
+  background-color: #333;
+}
+
+footer .footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer .footer-links {
+  text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  footer input {
+    width: 100%; 
+    margin-right: 0; 
+    margin-bottom: 10px; 
+  }
+
+  footer button {
+    width: 100%; 
+    margin-top: 10px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar-left,
+  .navbar-right {
+    margin-bottom: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .product-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+#confirmationMessage {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #28a745; 
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .banner h2 {
+    font-size: 2rem;
+  }
+
+  .banner p {
+    font-size: 1rem;
+  }
+
+  .product {
+    padding: 15px;
+  }
+
+  .product h3 {
+    font-size: 1rem;
+  }
+
+  .product .price {
+    font-size: 1rem;
+  }
+
+  footer form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  footer input {
+    width: 100%;
+  }
+
+  footer button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-bar p {
+    font-size: 0.8rem;
+  }
+
+  .navbar h1 {
+    font-size: 1.5rem;
+  }
+
+  .search-bar {
+    font-size: 0.9rem;
+  }
+
+  .banner h2 {
+    font-size: 1.8rem;
+  }
+
+  .banner p {
+    font-size: 0.9rem;
+  }
+
+  .product {
+    padding: 10px;
+  }
+
+  .product h3 {
+    font-size: 0.9rem;
+  }
+
+  .product .price {
+    font-size: 0.9rem;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
+}
